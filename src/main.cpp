@@ -80,7 +80,8 @@ void quickSort(std::vector<int> &vec, int left, int right,
     return;
 
   int middle = partition(vec, left, right, vecRects, window);
-  quickSort(vec, left, middle - 1, vecRects, window);
+  if (middle > 0)
+    quickSort(vec, left, middle - 1, vecRects, window);
   quickSort(vec, middle + 1, right, vecRects, window);
 }
 
